@@ -1,12 +1,11 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-
-function Home() {
+function Explore() {
   return (
     <Box as="main" p="4">
-      <h3>this is home</h3>
+      <h3>this is explore</h3>
     </Box>
   );
 }
 
-export default Home;
+export default Explore;

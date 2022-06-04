@@ -1,15 +1,14 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route,Routes } from "react-router-dom";
 import DrawerMenu from "./components/drawer/DrawerMenu";
 import Navbar from "./components/Navbar";
-import { Landing, Home } from "./pages";
 import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Landing } from "./pages";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Landing />} />
-        {/* <Route path="home" element={<Home />} /> */}
+        <Route path="/" element={<Landing/>}/>
       </Routes>
       <Box
         as="section"
@@ -19,7 +18,7 @@ function App() {
         <DrawerMenu />
         <Box as="section" ml={{ base: 0, md: 60 }} transition=".3s ease">
           <Navbar />
-          <Home />
+          <Outlet/>
         </Box>
       </Box>
     </div>

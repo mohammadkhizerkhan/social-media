@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import { FaClipboardCheck, FaRss } from "react-icons/fa";
+import { Box, Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { FaUserCircle } from "react-icons/fa";
 import { AiFillGift } from "react-icons/ai";
-import { BsGearFill } from "react-icons/bs";
-import { HiCollection } from "react-icons/hi";
-import { MdHome } from "react-icons/md";
+import { MdHome, MdOutlineBookmark, MdExplore } from "react-icons/md";
 import NavItem from "./components/NavItem";
+import { NavLink } from "react-router-dom";
 function SidebarContent(props) {
   return (
     <Box
@@ -41,12 +40,37 @@ function SidebarContent(props) {
         color="gray.600"
         aria-label="Main Navigation"
       >
-        <NavItem icon={MdHome}>Home</NavItem>
-        <NavItem icon={FaRss}>Articles</NavItem>
-        <NavItem icon={HiCollection}>Collections</NavItem>
-        <NavItem icon={FaClipboardCheck}>Checklists</NavItem>
-        <NavItem icon={AiFillGift}>Changelog</NavItem>
-        <NavItem icon={BsGearFill}>Settings</NavItem>
+        <NavItem as={NavLink} to="/home" _activeLink={{fontWeight:"bold",color:"brand.500",backgroundColor:"brand.100"}} icon={MdHome} fontSize="2xl" fontWeight="bold">
+          Feed
+        </NavItem>
+        <NavItem as={NavLink} to="/explore" _activeLink={{fontWeight:"bold",color:"brand.500",backgroundColor:"brand.100"}} icon={MdExplore} fontSize="2xl" fontWeight="bold">
+          Explore
+        </NavItem>
+        <NavItem as={NavLink} to="/saved" _activeLink={{fontWeight:"bold",color:"brand.500",backgroundColor:"brand.100"}} icon={MdOutlineBookmark} fontSize="2xl" fontWeight="bold">
+          Saved
+        </NavItem>
+        <NavItem as={NavLink} to="/profile" _activeLink={{fontWeight:"bold",color:"brand.500",backgroundColor:"brand.100"}} fontSize="2xl" fontWeight="bold" icon={FaUserCircle}>
+          Profile
+        </NavItem>
+        <Flex
+          align="center"
+          px="4"
+          pl="4"
+          py="3"
+          cursor="pointer"
+          color={useColorModeValue("inherit", "gray.400")}
+          _hover={{
+            bg: useColorModeValue("gray.100", "gray.900"),
+            color: useColorModeValue("gray.900", "gray.200"),
+          }}
+          role="group"
+          fontWeight="semibold"
+          transition=".15s ease"
+        >
+          <Button variant="solid" colorScheme="brand" fontSize="xl">
+            Add a Post
+          </Button>
+        </Flex>
       </Flex>
     </Box>
   );

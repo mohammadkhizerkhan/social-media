@@ -1,3 +1,6 @@
 import Landing from "./Landing";
 import Home from "./Home";
-export {Landing,Home}
+import Explore from "./Explore";
+import Saved from "./Saved";
+import Profile from "./Profile";
+export {Landing,Home,Explore,Saved,Profile}
