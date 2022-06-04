@@ -1,24 +1,27 @@
 import { Route, Routes } from "react-router-dom";
+import DrawerMenu from "./components/drawer/DrawerMenu";
+import Navbar from "./components/Navbar";
 import { Landing, Home } from "./pages";
-import { useColorMode, Button } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 function App() {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <div className="App">
-      <Button
-        onClick={toggleColorMode}
-        colorScheme="brand"
-        w="full"
-        py={2}
-        type="button"
-      >
-        {colorMode === "light" ? "dark mode" : "light mode"}
-      </Button>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="home" element={<Home />} />
+        {/* <Route path="home" element={<Home />} /> */}
       </Routes>
+      <Box
+        as="section"
+        bg={useColorModeValue("gray.50", "gray.700")}
+        minH="100vh"
+      >
+        <DrawerMenu />
+        <Box as="section" ml={{ base: 0, md: 60 }} transition=".3s ease">
+          <Navbar />
+          <Home />
+        </Box>
+      </Box>
     </div>
   );
 }

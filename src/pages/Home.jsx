@@ -1,13 +1,13 @@
 import React from "react";
-import { chakra } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 function Home() {
   return (
-    <>
-      <chakra.h1>This is home</chakra.h1>
-    </>
+    <Box as="main" p="4">
+      {/* Add content here, remove div below  */}
+      <Box borderWidth="4px" borderStyle="dashed" rounded="md" h="96" />
+    </Box>
   );
 }
 
 export default Home;
-
