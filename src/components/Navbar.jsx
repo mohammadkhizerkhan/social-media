@@ -19,7 +19,6 @@ function Navbar() {
     const sidebar = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    
       <Flex
         as="header"
         align="center"
@@ -47,9 +46,9 @@ function Navbar() {
         <Button
           onClick={toggleColorMode}
           colorScheme="brand"
-          w="full"
           py={2}
           type="button"
+          mr={4}
         >
           {colorMode === "light" ? "dark mode" : "light mode"}
         </Button>

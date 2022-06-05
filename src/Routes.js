@@ -8,7 +8,7 @@ function Routes() {
     <>
       <RoutesContainer>
         <Route element={<App />}>
-          <Route path="/signin" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/saved" element={<Saved />} />

@@ -11,9 +11,10 @@ function NavItem(props) {
     return (
       <Flex
         align="center"
-        px="4"
-        pl="4"
-        py="3"
+        px="2"
+        pl="2"
+        py="2"
+        mt={4}
         cursor="pointer"
         color={useColorModeValue("inherit", "gray.400")}
         _hover={{
@@ -21,8 +22,8 @@ function NavItem(props) {
           color: useColorModeValue("gray.900", "gray.200")
         }}
         role="group"
-        fontWeight="semibold"
         transition=".15s ease"
+        
         {...rest}
       >
         {icon && (
