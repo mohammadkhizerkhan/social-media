@@ -30,8 +30,9 @@ function FollowSuggest() {
         bg={useColorModeValue("white", "gray.800")}
         borderColor={useColorModeValue("inherit", "gray.700")}
         borderRightWidth="1px"
-        mt={8}
+        // mt={8}
         w="60"
+        display={{ base: "none", md: "unset" }}
       >
         <Heading as="h1" size="10px" mb="5px">
           Who to follow
@@ -45,7 +46,7 @@ function FollowSuggest() {
             </Heading>
             <Text mt={0}>ryan123</Text>
           </VStack>
-          <Button leftIcon={<MdAdd />} colorScheme="teal" variant="solid" size="xs">
+          <Button leftIcon={<MdAdd />} colorScheme="brand" variant="solid" size="xs" px="10px">
             Follow
           </Button>
         </HStack>

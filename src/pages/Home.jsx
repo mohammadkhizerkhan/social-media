@@ -1,10 +1,12 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import { PostCard } from "../components";
 
 function Home() {
   return (
-    <Box as="main" p="4">
-      <h3>this is home</h3>
+    <Box as="main" p="4" bg={useColorModeValue("#F9FAFB", "gray.600")}>
+      <PostCard />
+      <PostCard />
     </Box>
   );
 }

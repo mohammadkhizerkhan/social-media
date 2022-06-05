@@ -12,10 +12,11 @@ function SidebarContent(props) {
       pos="fixed"
       top="0"
       left={20}
-      mt={8}
+      // mt={8}
       zIndex="sticky"
       h="full"
       pb="10"
+      px="10px"
       overflowX="hidden"
       overflowY="auto"
       bg={useColorModeValue("inherit", "gray.800")}
