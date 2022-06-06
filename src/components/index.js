@@ -1,4 +1,5 @@
 import FollowSuggest from "./FollowSuggest";
 import Navbar from "./Navbar";
 import PostCard from "./PostCard"
-export {FollowSuggest,Navbar,PostCard}
+import ProfileCard from "./ProfileCard"
+export {FollowSuggest,Navbar,PostCard,ProfileCard}

@@ -31,12 +31,20 @@ const config = {
   initialColorMode: "dark",
   useSystemColorMode: false,
 };
+// const breakpoints = {
+//   sm: '550px',
+//   md: '768px',
+//   lg: '960px',
+//   xl: '1200px',
+//   '2xl': '1536px',
+// }
 
 const theme = extendTheme(
   {
     colors,
     config,
     borderRadius,
+    // breakpoints,
   },
   withDefaultColorScheme({
     colorScheme: "brand",

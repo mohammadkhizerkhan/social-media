@@ -17,12 +17,11 @@ import { FaBell } from "react-icons/fa";
 import { FiMenu, FiSearch } from "react-icons/fi";
 import { MdOutlineSearch } from "react-icons/md";
 function Navbar() {
-  const sidebar = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
       as="header"
-      position="relative"
+      // position="relative"
       px="4"
       bg={useColorModeValue("white", "gray.800")}
       borderBottomWidth="1px"
@@ -31,18 +30,11 @@ function Navbar() {
       w="full"
     >
       <Flex
-        position="fixed"
-        sx={{ zIndex: 3 }}
+        // position="fixed"
+        // sx={{ zIndex: 3 }}
         align="center"
         justify="space-between"
       >
-        <IconButton
-          aria-label="Menu"
-          display={{ base: "inline-flex", md: "none" }}
-          onClick={sidebar.onOpen}
-          icon={<FiMenu />}
-          size="sm"
-        />
         <InputGroup mx={8} w="full" display={{ base: "unset", md: "flex" }}>
           <InputLeftElement color="gray.500">
             <Icon as={MdOutlineSearch} w="25px" h="25px" mt="8px" />

@@ -21,7 +21,7 @@ function FollowSuggest() {
         alignItems="start"
         pos="fixed"
         top="0"
-        right={17}
+        right={20}
         zIndex="sticky"
         
         h="full"
@@ -32,7 +32,7 @@ function FollowSuggest() {
         borderColor={useColorModeValue("inherit", "gray.700")}
         borderLeftWidth="1px"
         // mt={8}
-        w={76}
+        w={60}
         display={{ base: "none", md: "unset" }}
       >
         <Heading as="h1" size="10px" mb="5px">
