@@ -2,25 +2,28 @@ import React from "react";
 import {
   chakra,
   Box,
-  Image,
   Avatar,
   Flex,
   useColorModeValue,
   Link,
-  Input,
-  Text,
   Button,
   VStack,
   HStack,
   Heading,
-  InputRightElement,
-  InputGroup,
-  Icon,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Textarea,
 } from "@chakra-ui/react";
-import { MdOutlineBookmarkBorder, MdOutlineMoreVert } from "react-icons/md";
-import { IoHeartOutline } from "react-icons/io5";
+
 
 function ProfileCard() {
+    const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex w="full" alignItems="center" justifyContent="center" mt={4}>
       <Box
@@ -33,26 +36,44 @@ function ProfileCard() {
         maxW="1xl"
       >
         <Flex justifyContent="space-between" alignItems="center">
-          <HStack w="full" alignItems="start">
+          <VStack w="full" alignItems="center">
             <Avatar name="ryan" src="https://bit.ly/ryan-florence" size="lg" />
-            <VStack alignItems="start" justifyContent="center">
-              <Heading as="h6" size="10px">
+            <VStack alignItems="center" justifyContent="center">
+              <Heading as="h4" size="50px">
                 ryan florence
-                <chakra.span
-                  ml="4px"
-                  fontSize="sm"
-                  color={useColorModeValue("gray.600", "gray.400")}
-                >
-                  @ryan123
-                </chakra.span>
               </Heading>
-              <Text
-                mt={0}
+              <p
+                marginTop="0px"
                 fontSize="sm"
                 color={useColorModeValue("gray.600", "gray.400")}
               >
-                Mar 10, 2019
-              </Text>
+                @ryan123
+              </p>
+              <Button w="fit-content" borderRadius="4px" px="25px" mr="10px" onClick={onOpen}>
+                Edit Profile
+              </Button>
+              <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Edit Profile</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <HStack alignItems="start">
+                      <Avatar
+                        name="ryan"
+                        src="https://bit.ly/ryan-florence"
+                        size="sm"
+                      />
+                      
+                    </HStack>
+                  </ModalBody>
+                  <ModalFooter p="10px">
+                    <Button colorScheme="blue" mr={3}>
+                      SAVE
+                    </Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
               <chakra.p
                 mt={2}
                 color={useColorModeValue("gray.600", "gray.300")}
@@ -60,7 +81,7 @@ function ProfileCard() {
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Tempora
               </chakra.p>
-              <Flex w="full">
+              <Flex w="full" justifyContent="center">
                 <Button variant="link" mr="20px">
                   5 Posts
                 </Button>
@@ -71,20 +92,14 @@ function ProfileCard() {
                   5 Following
                 </Button>
               </Flex>
-              <Link color={"brand.600"} href="https://peerlist.io/khizerkhan">
+              <Link
+                color={useColorModeValue("gray.600", "gray.400")}
+                href="https://peerlist.io/khizerkhan"
+              >
                 https://peerlist.io/khizerkhan
               </Link>
             </VStack>
-          </HStack>
-          <Button
-            alignSelf="start"
-            borderRadius="4px"
-            px="25px"
-            w="20px"
-            mr="10px"
-          >
-            Edit
-          </Button>
+          </VStack>
         </Flex>
       </Box>
     </Flex>
