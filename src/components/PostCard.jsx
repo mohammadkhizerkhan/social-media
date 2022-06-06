@@ -35,7 +35,8 @@ export default function PostCard() {
         rounded="lg"
         shadow="lg"
         bg={useColorModeValue("white", "gray.800")}
-        maxW="1xl"
+        w="full"
+        maxW="41rem"
       >
         <Flex justifyContent="space-between" alignItems="center">
           <HStack w="full">

@@ -1,11 +1,30 @@
 import React from "react";
-import { Box, Button, Flex, Text, useColorModeValue,Center } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Text,
+  useColorModeValue,
+  Center,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  HStack,
+  Avatar,
+  Textarea,
+} from "@chakra-ui/react";
 import { FaUserCircle } from "react-icons/fa";
 import { AiFillGift } from "react-icons/ai";
 import { MdHome, MdOutlineBookmark, MdExplore } from "react-icons/md";
 import NavItem from "./components/NavItem";
 import { NavLink } from "react-router-dom";
 function SidebarContent(props) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box
       as="nav"
@@ -116,9 +135,28 @@ function SidebarContent(props) {
           transition=".15s ease"
           fontSize="1xl"
           borderRadius="3xl"
+          onClick={onOpen}
         >
           Add a Post
         </Button>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Add a post</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <HStack alignItems="start">
+              <Avatar name="ryan" src="https://bit.ly/ryan-florence" size="sm" />
+              <Textarea placeholder='Here is a sample placeholder' minHeight="120px"/>
+              </HStack>
+            </ModalBody>
+            <ModalFooter p="10px">
+              <Button colorScheme="blue" mr={3} >
+                Post
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Flex>
     </Box>
   );
