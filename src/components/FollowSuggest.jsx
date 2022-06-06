@@ -21,17 +21,18 @@ function FollowSuggest() {
         alignItems="start"
         pos="fixed"
         top="0"
-        right={4}
+        right={17}
         zIndex="sticky"
+        
         h="full"
         p="4"
         overflowX="hidden"
         overflowY="auto"
         bg={useColorModeValue("white", "gray.800")}
         borderColor={useColorModeValue("inherit", "gray.700")}
-        borderRightWidth="1px"
+        borderLeftWidth="1px"
         // mt={8}
-        w="60"
+        w={76}
         display={{ base: "none", md: "unset" }}
       >
         <Heading as="h1" size="10px" mb="5px">

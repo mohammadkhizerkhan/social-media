@@ -12,7 +12,6 @@ function SidebarContent(props) {
       pos="fixed"
       top="0"
       left={20}
-      // mt={8}
       zIndex="sticky"
       h="full"
       pb="10"

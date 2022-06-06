@@ -14,7 +14,7 @@ function App() {
         // mt={8}
       >
         <DrawerMenu />
-        <Box as="section" ml={{ base: 0, md: 80 }} mr={{ base: 0, md: 60 }} transition=".3s ease">
+        <Box as="section" mx={{ base: 0, md: 80 }} transition=".3s ease">
           <Navbar/>
           <Outlet/>
         </Box>
