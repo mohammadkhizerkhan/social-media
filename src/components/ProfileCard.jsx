@@ -19,11 +19,19 @@ import {
   ModalBody,
   ModalCloseButton,
   Textarea,
+  InputGroup,
+  InputLeftElement,
+  visuallyHidden,
+  Checkbox,
+  FormLabel,
+  SimpleGrid,
+  Input,
+  VisuallyHidden,
+  FormControl,
 } from "@chakra-ui/react";
 
-
 function ProfileCard() {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex w="full" alignItems="center" justifyContent="center" mt={4}>
       <Box
@@ -49,7 +57,13 @@ function ProfileCard() {
               >
                 @ryan123
               </p>
-              <Button w="fit-content" borderRadius="4px" px="25px" mr="10px" onClick={onOpen}>
+              <Button
+                w="fit-content"
+                borderRadius="4px"
+                px="25px"
+                mr="10px"
+                onClick={onOpen}
+              >
                 Edit Profile
               </Button>
               <Modal isOpen={isOpen} onClose={onClose}>
@@ -59,12 +73,41 @@ function ProfileCard() {
                   <ModalCloseButton />
                   <ModalBody>
                     <HStack alignItems="start">
-                      <Avatar
-                        name="ryan"
-                        src="https://bit.ly/ryan-florence"
-                        size="sm"
-                      />
-                      
+                      <SimpleGrid
+                      w="full"
+                        columns={1}
+                        px={6}
+                        py={4}
+                        spacing={4}
+                        borderBottom="solid 1px"
+                        borderColor={useColorModeValue("gray.200", "gray.700")}
+                      >
+                        <FormControl>
+                          <FormLabel>Name</FormLabel>
+                          <Input
+                            mt={0}
+                            type="text"
+                            placeholder="Name"
+                            required="true"
+                          />
+                        </FormControl>
+                        <FormControl>
+                          <FormLabel>Bio</FormLabel>
+                          <Textarea
+                            placeholder="Enter your bio here"
+                            minHeight="120px"
+                          />
+                        </FormControl>
+                        <FormControl>
+                          <FormLabel>Website</FormLabel>
+                          <Input
+                            mt={0}
+                            type="text"
+                            placeholder="Enter your website here"
+                            required="true"
+                          />
+                        </FormControl>
+                      </SimpleGrid>
                     </HStack>
                   </ModalBody>
                   <ModalFooter p="10px">
