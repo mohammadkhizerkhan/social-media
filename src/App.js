@@ -9,9 +9,7 @@ function App() {
     <div className="App" >
       <Box
         as="section"
-        // bg={useColorModeValue("gray.50", "gray.700")}
         minH="100vh"
-        // mt={8}
       >
         <DrawerMenu />
         <Box as="section" mx={{ base: 0, md: 80 }} transition=".3s ease">
