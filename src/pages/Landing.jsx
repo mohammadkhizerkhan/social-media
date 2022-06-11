@@ -26,7 +26,7 @@ import Signup from "./Signup";
 export default function Landing() {
   const bgColor = useColorModeValue("black", "white");
   return (
-    <Box px={8} py={24} mx="auto">
+    <Box px={{base:"3rem",md:"7rem"}} py={{base:"3rem",md:"7rem"}} mx="auto">
       <SimpleGrid
         alignItems="center"
         w={{ base: "full", xl: 11 / 12 }}

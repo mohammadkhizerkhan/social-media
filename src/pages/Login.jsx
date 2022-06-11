@@ -9,7 +9,7 @@ import LoginForm from "./LoginForm";
 
 export default function Login() {
   return (
-    <Box px={8} py={24} mx="auto">
+    <Box px={{base:"3rem",md:"7rem"}} py={{base:"3rem",md:"7rem"}} mx="auto">
       <SimpleGrid
         alignItems="center"
         w={{ base: "full", xl: 11 / 12 }}
